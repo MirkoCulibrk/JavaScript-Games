@@ -1,20 +1,6 @@
-.grid {
-  width: 200px;
-  height: 200px;
+body{
   display: flex;
-  flex-wrap: wrap;
-  border-style: solid;
-}
-
-.grid div {
-  width: 20px;
-  height: 20px;
-}
-
-.snake {
-  background-color: blue;
-}
-
-.apple {
-  background-color: purple;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
