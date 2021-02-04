@@ -3,35 +3,32 @@ const canvas=document.querySelector('#canvas');
 const ctx=canvas.getContext('2d');
 canvas.width=600;
 canvas.height=600;
+
+//treba nam sad da crta se ta slika na contextu
+function drawCharacter(character,context){
+    //uzece se taj character kao sprite i onda se na njega poziva draw koji uzima 
+    character.draw('frog',context,0,0);
+}
+
 Promise.all([loadFrog()])
             .then(([frog])=>{
-                console.log(frog);  
+                drawCharacter(frog,ctx);
             });
-//making player
-class Player{
-    constructor(x,y,width,height,color){
-        this.x=x;
-        this.y=y;
-        this.width=width;
-        this.height=height;
-        this.color=color;
-    }
-    //drawing w
-    draw(){
-        ctx.beginPath();
-        ctx.fillStyle=this.color;
-        ctx.fillRect(this.x,this.y,this.width,this.height);
 
-    }
-    update(){
-        this.draw();
-    }
-}
-const player=new Player(600/2,600-50,80,50,'white');
+
+
+
+
+
+
+
+
+
+
+
 function update(){
     //treba nam da se svaki frejm poziva ista funkcija 
     requestAnimationFrame(update);
-    player.draw();
 }
 //pokrene se jednom update
 update();
