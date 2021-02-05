@@ -18,7 +18,7 @@ export class SpriteSheet{
                   //pozicija odakle se crta slika x,y pozicija i njena sirina
                   this.image,x,y,this.width,this.height,
                   //pozicija gde ce se crtatiti na canvasu
-                  x,y,width,height);
+                  0,0,width,height);
         //map je objekat sa key,value gde cemo setovati name kao key a buffer kao value
         this.sprites.set(name,buffer);
         console.log(this.sprites);

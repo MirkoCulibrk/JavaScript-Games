@@ -12,4 +12,14 @@ export function loadSpriteSheet(url){
         
     })
 }
-
+//make function to load a background
+export function loadBackground(url){
+    return new Promise((resolve)=>{
+        const image=new Image();
+        image.addEventListener('load',()=>{
+            //change status of promise when image is loaded
+            resolve(image);
+        });
+        image.src=url;
+    });
+}
